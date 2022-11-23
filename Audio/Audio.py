@@ -1,5 +1,4 @@
 import pyaudio
-import wave
 import librosa
 import numpy
 
