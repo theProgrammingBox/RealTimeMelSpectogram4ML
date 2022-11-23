@@ -3,7 +3,8 @@ import librosa
 import numpy
 
 ViewFirstFraction = 2	#1 for 100%, 2 for 50%, 100 for 1%
-WindowSize = 203
+WindowSize = 203        #fullscreen is about 203 chars wide
+MaxDB = 40              #range, 0 - 40 is good
 
 FORMAT = pyaudio.paFloat32
 CHANNELS = 1
@@ -25,10 +26,10 @@ while True:
     melSpectrogram = librosa.power_to_db(spectrogram, ref=numpy.max)
     
     illuminationList = ".,-~:;=!*#$@"
-    melSpectrogram = melSpectrogram + 80
+    melSpectrogram = melSpectrogram + MaxDB
     melSpectrogram[melSpectrogram < 0] = 0
-    melSpectrogram[melSpectrogram > 79.999] = 79.999
-    melSpectrogram = melSpectrogram / 80 * len(illuminationList)
+    melSpectrogram[melSpectrogram > MaxDB - 0.001] = MaxDB - 0.001
+    melSpectrogram = melSpectrogram / MaxDB * len(illuminationList)
     string = ""
     for i in range(0, WindowSize):
         string += illuminationList[int(melSpectrogram[i])]
