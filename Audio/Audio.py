@@ -17,13 +17,7 @@ N_FFT = 4096
 N_MELS = WindowSize * ViewFirstFraction
 M = librosa.filters.mel(RATE, N_FFT, N_MELS)
 
-stream = p.open(format=FORMAT,
-                channels=CHANNELS,
-                rate=RATE,
-                input=True,
-                frames_per_buffer=FRAMES_PER_BUFFER)
-
-print("Start recording")
+stream = p.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, frames_per_buffer=FRAMES_PER_BUFFER)
 
 while True:
     data = stream.read(FRAMES_PER_BUFFER)
