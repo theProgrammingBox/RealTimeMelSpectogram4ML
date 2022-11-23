@@ -4,20 +4,20 @@ import numpy
 
 ViewFirstFraction = 2	#1 for 100%, 2 for 50%, 100 for 1%
 WindowSize = 203        #fullscreen is about 203 chars wide
-MaxDB = 40              #range, 0 - 40 is good
+MaxDB = 40              #lower range allowed, (0) - (-40) is good
+
+p = pyaudio.PyAudio()
 
 FORMAT = pyaudio.paFloat32
 CHANNELS = 1
 RATE = 44100
 FRAMES_PER_BUFFER = 1024
 
-p = pyaudio.PyAudio()
+stream = p.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, frames_per_buffer=FRAMES_PER_BUFFER)
 
 N_FFT = 4096
 N_MELS = WindowSize * ViewFirstFraction
 M = librosa.filters.mel(RATE, N_FFT, N_MELS)
-
-stream = p.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, frames_per_buffer=FRAMES_PER_BUFFER)
 
 while True:
     data = stream.read(FRAMES_PER_BUFFER)
