@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Audio", "Audio\Audio.pyproj", "{E368C8E5-A8E8-459B-B3AE-22FA387E59D7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E368C8E5-A8E8-459B-B3AE-22FA387E59D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E368C8E5-A8E8-459B-B3AE-22FA387E59D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {914BDADE-0494-42DF-81D8-5ED9AE6861FB}
+	EndGlobalSection
+EndGlobal
