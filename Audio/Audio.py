@@ -4,7 +4,7 @@ import numpy
 
 ViewFirstFraction = 2	#1 for 100%, 2 for 50%, 100 for 1%
 WindowSize = 203        #fullscreen is about 203 chars wide
-MaxDB = 40              #lower range allowed, (0) - (-40) is good
+MaxDB = 30              #play around with it, 30 - 80 is good based on your volume
 
 p = pyaudio.PyAudio()
 
